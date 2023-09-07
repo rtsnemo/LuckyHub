@@ -214,6 +214,7 @@
     <Content Include="Views\Clothes\Index.cshtml" />
     <Content Include="Views\Clothes\ProductByCategory.cshtml" />
     <Content Include="Views\Categories\CreateList.cshtml" />
+    <Content Include="Views\Clothes\CreateList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

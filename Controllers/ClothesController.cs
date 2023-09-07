@@ -49,6 +49,11 @@ namespace StyleHub.Controllers
             return View();
         }
 
+        public ActionResult CreateList()
+        {
+            return View(db.Clothes.ToList());
+        }
+
         // POST: Clothes/Create
         // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
         // сведения см. в разделе https://go.microsoft.com/fwlink/?LinkId=317598.
