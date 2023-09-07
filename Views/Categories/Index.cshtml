@@ -4,9 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2 class="mb-5">
+    @Html.ActionLink("Створення нової категорії", "CreateList")
+</h2>
 
 <div class="container">
     <div class="row">
@@ -18,9 +18,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-center"><a href="@Url.Action("ProductByCategory", "Clothes", new { CategoryId = item.CategoryId })">@item.Name</a></h5>
                         <div class="btn-group d-flex justify-content-center" role="group">
-                            @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }, new { @class = "btn btn-primary" })
                             @Html.ActionLink("Details", "Details", new { id = item.CategoryId }, new { @class = "btn btn-info" })
-                            @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId }, new { @class = "btn btn-danger" })
                         </div>
                     </div>
                 </div>

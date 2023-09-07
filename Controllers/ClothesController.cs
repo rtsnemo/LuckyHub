@@ -45,6 +45,7 @@ namespace StyleHub.Controllers
         // GET: Clothes/Create
         public ActionResult Create()
         {
+            ViewBag.Categories = db.Categories.ToList();
             return View();
         }
 

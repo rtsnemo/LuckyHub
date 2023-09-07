@@ -18,10 +18,12 @@
                         <h5 class="card-title">@product.Name</h5>
                         <p class="card-text">Ціна: @product.Price</p>
                         <p class="card-text">Залишилось на складі: @product.Amount</p>
-                        <a href="#" class="btn btn-primary">Купить</a>
+                        <a href="#" class="btn btn-primary">Купити</a>
                     </div>
                 </div>
             </div>
         }
     </div>
+
+    <p>@Html.ActionLink("Перейти до Категорій", "Index", "Categories", new { area = "" }, new { @class = "nav-link" })</p>
 </div>
