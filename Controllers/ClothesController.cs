@@ -23,6 +23,7 @@ namespace StyleHub.Controllers
 
         public ActionResult ProductByCategory(int categoryId)
         {
+            ViewBag.CategoryName = db.Categories.Where(q=> q.CategoryId == categoryId).First().Name;
             return View(db.Clothes.Where(q=> q.CategoryId == categoryId).ToList());
         }
 

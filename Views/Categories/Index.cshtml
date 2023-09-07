@@ -4,41 +4,27 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            <a href="@Url.Action("ProductByCategory", "Clothes", new { CategoryId = item.CategoryId })">@item.Name</a></td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageURL)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CategoryId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CategoryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CategoryId })
-        </td>
-    </tr>
-}
-
-</table>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="@item.ImageURL" class="card-img-top" style="height: 400px; object-fit:cover" alt="@item.Name">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><a href="@Url.Action("ProductByCategory", "Clothes", new { CategoryId = item.CategoryId })">@item.Name</a></h5>
+                        <div class="btn-group d-flex justify-content-center" role="group">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Details", "Details", new { id = item.CategoryId }, new { @class = "btn btn-info" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId }, new { @class = "btn btn-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
