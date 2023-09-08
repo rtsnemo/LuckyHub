@@ -18,7 +18,6 @@
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Домашня сторінка", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Категорії", "Index", "Categories", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Товари", "Index", "Clothes", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
@@ -27,15 +26,15 @@
     </nav>
     <div class="container body-content">
         @RenderBody()
-    <footer class="footer">
-        <hr />
-        <div class="container d-inline-flex">
-            <p class="ms-3 me-auto">&copy; @DateTime.Now.Year - Copyright by Popov Maksym</p>
-            <p class="me-3">@Html.ActionLink("Інформація", "About", "Home", new { area = "" }, new { @class = "nav-link" })</p>
-            <p class="ms-3">@Html.ActionLink("Зв'язок з нами", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</p>
-        </div>
+        <footer class="footer">
+            <hr />
+            <div class="container d-inline-flex">
+                <p class="ms-3 me-auto">&copy; @DateTime.Now.Year - Copyright by Popov Maksym</p>
+                <p class="me-3">@Html.ActionLink("Інформація", "About", "Home", new { area = "" }, new { @class = "nav-link" })</p>
+                <p class="ms-3">@Html.ActionLink("Зв'язок з нами", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</p>
+            </div>
+        </footer>
     </div>
-    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

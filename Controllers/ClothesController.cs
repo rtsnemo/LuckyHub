@@ -39,6 +39,8 @@ namespace StyleHub.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Clothes = db.Clothes.Where(q=> q.CategoryId == cloth.CategoryId && q.ClothId != cloth.ClothId).ToList();
+            ViewBag.ReturnUrl = Request.UrlReferrer?.ToString();
             return View(cloth);
         }
 
@@ -78,6 +80,7 @@ namespace StyleHub.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            ViewBag.Categories = db.Categories.ToList();
             Cloth cloth = db.Clothes.Find(id);
             if (cloth == null)
             {

@@ -4,24 +4,23 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="mb-5">
+<p class="mb-5">
     @Html.ActionLink("Створення нової категорії", "CreateList")
-</h2>
+</p>
 
 <div class="container">
     <div class="row">
         @foreach (var item in Model)
         {
             <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="@item.ImageURL" class="card-img-top" style="height: 400px; object-fit:cover" alt="@item.Name">
-                    <div class="card-body">
-                        <h5 class="card-title text-center"><a href="@Url.Action("ProductByCategory", "Clothes", new { CategoryId = item.CategoryId })">@item.Name</a></h5>
-                        <div class="btn-group d-flex justify-content-center" role="group">
-                            @Html.ActionLink("Details", "Details", new { id = item.CategoryId }, new { @class = "btn btn-info" })
+                <a href="@Url.Action("ProductByCategory", "Clothes", new { CategoryId = item.CategoryId })">
+                    <div class="card">
+                        <img src="@item.ImageURL" class="card-img-top" style="height: 400px; object-fit:cover" alt="@item.Name">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">@item.Name</h5>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         }
     </div>

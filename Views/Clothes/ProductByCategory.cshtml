@@ -12,7 +12,9 @@
             <div class="col-md-4 col-sm-6 mb-4">
                 <div class="card">
                     <div class="card-img-top mt-3 mx-2" style="max-height: 400px">
-                    <img src="@product.ImageURL" class="card-img-top" style="max-height: 400px; object-fit:cover" alt="@product.Name">
+                        <a href="@Url.Action("Details", "Clothes", new { id = product.ClothId })" class="card-link">
+                            <img src="@product.ImageURL" class="card-img-top" style="max-height: 400px; object-fit:cover" alt="@product.Name">
+                        </a>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">@product.Name</h5>
