@@ -22,5 +22,9 @@ namespace StyleHub.Data
         public System.Data.Entity.DbSet<StyleHub.Models.Category> Categories { get; set; }
 
         public System.Data.Entity.DbSet<StyleHub.Models.Cloth> Clothes { get; set; }
+
+        public System.Data.Entity.DbSet<StyleHub.Models.DeliveryOption> DeliveryOptions { get; set; }
+
+        public System.Data.Entity.DbSet<StyleHub.Models.PurchaseRequest> PurchaseRequests { get; set; }
     }
 }

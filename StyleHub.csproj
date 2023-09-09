@@ -146,10 +146,15 @@
     <Compile Include="Migrations\202309061616363_CreateTables.designer.cs">
       <DependentUpon>202309061616363_CreateTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309090958386_AddDeliveryOptionsAndRequestPurchase.cs" />
+    <Compile Include="Migrations\202309090958386_AddDeliveryOptionsAndRequestPurchase.designer.cs">
+      <DependentUpon>202309090958386_AddDeliveryOptionsAndRequestPurchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\PurchaseRequest.cs" />
     <Compile Include="Models\Cloth.cs" />
+    <Compile Include="Models\DeliveryOption.cs" />
+    <Compile Include="Models\PurchaseRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309061616363_CreateTables.resx">
       <DependentUpon>202309061616363_CreateTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309090958386_AddDeliveryOptionsAndRequestPurchase.resx">
+      <DependentUpon>202309090958386_AddDeliveryOptionsAndRequestPurchase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
