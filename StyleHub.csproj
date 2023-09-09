@@ -148,6 +148,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\PurchaseRequest.cs" />
     <Compile Include="Models\Cloth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
