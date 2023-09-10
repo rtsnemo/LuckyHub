@@ -1,0 +1,80 @@
+﻿@model StyleHub.Models.PurchaseRequest
+
+@{
+    ViewBag.Title = "Create";
+    var product = ViewBag.Cloth as StyleHub.Models.Cloth;
+}
+
+<h2 class="text-center">Створення замовлення</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+<div class="row">
+    <div class="form-horizontal col text-center">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @Html.HiddenFor(model => model.ClothId, new { Value = Model.ClothId })
+        @Html.HiddenFor(model => model.IsApproved, new { Value = Model.IsApproved })
+
+        <div class="form-group">
+            Ваше ім'я
+            <div class="col-md-10 mx-auto">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control m-auto"} })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Ваш номер телефону
+            <div class="col-md-10 mx-auto">
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control m-auto" } })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Ваша пошта
+            <div class="col-md-10 mx-auto">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control m-auto" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Поштовий сервіс
+            <div class="col-md-10 mx-auto mt-2">
+                @Html.DropDownList("DeliveryId", new SelectList(ViewBag.Deliveries, "DeliveryId", "DeliveryName"), "Виберіть пошту", new { @class = "form-control mx-auto", style = "text-align: center;" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 mx-auto">
+                <input type="submit" value="Створити замовлення" class="btn btn-primary btn-lg mt-4 mb-3" />
+            </div>
+        </div>
+    </div>
+    <div class="card col text-center">
+            <img src="@product.ImageURL" class="card-img-top" style="max-height: 400px; object-fit:contain" alt="@product.Name">
+        <div class="card-body"  style="max-height: 200px; overflow: auto;">
+            <h5 class="card-title">@product.Name</h5>
+            <p class="card-text">Ціна: @product.Price</p>
+            <p class="card-text">Залишилось на складі: @product.Amount</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#formCreate').submit(function () {
+
+            window.open('https://prt.mn/PXgdS6Kqij', '_blank');
+        });
+    });
+</script>
+}
+    @Html.ActionLink("Перейти до товарів", "Index", "Clothes")
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

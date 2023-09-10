@@ -20,7 +20,11 @@
                         <h5 class="card-title">@product.Name</h5>
                         <p class="card-text">Ціна: @product.Price</p>
                         <p class="card-text">Залишилось на складі: @product.Amount</p>
-                        <a href="#" class="btn btn-primary">Купити</a>
+                        @using (Html.BeginForm("Create", "PurchaseRequests", new { ClothId = product.ClothId }, FormMethod.Get, new { @class = "form-inline" }))
+                        {
+                            @Html.Hidden("ClothId", product.ClothId)
+                            <button type="submit" class="btn btn-primary">Купити</button>
+                        }
                     </div>
                 </div>
             </div>

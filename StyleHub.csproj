@@ -130,6 +130,7 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ClothesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PurchaseRequestsController.cs" />
     <Compile Include="Data\StyleHubContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -149,6 +150,10 @@
     <Compile Include="Migrations\202309090958386_AddDeliveryOptionsAndRequestPurchase.cs" />
     <Compile Include="Migrations\202309090958386_AddDeliveryOptionsAndRequestPurchase.designer.cs">
       <DependentUpon>202309090958386_AddDeliveryOptionsAndRequestPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309091004274_AddDeliveries.cs" />
+    <Compile Include="Migrations\202309091004274_AddDeliveries.designer.cs">
+      <DependentUpon>202309091004274_AddDeliveries.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -174,6 +179,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\img\1.png" />
+    <Content Include="Content\img\2.png" />
+    <Content Include="Content\img\3.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -221,6 +229,11 @@
     <Content Include="Views\Clothes\ProductByCategory.cshtml" />
     <Content Include="Views\Clothes\CreateList.cshtml" />
     <Content Include="Views\Categories\CreateList.cshtml" />
+    <Content Include="Views\PurchaseRequests\Create.cshtml" />
+    <Content Include="Views\PurchaseRequests\Delete.cshtml" />
+    <Content Include="Views\PurchaseRequests\Details.cshtml" />
+    <Content Include="Views\PurchaseRequests\Edit.cshtml" />
+    <Content Include="Views\PurchaseRequests\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -264,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309090958386_AddDeliveryOptionsAndRequestPurchase.resx">
       <DependentUpon>202309090958386_AddDeliveryOptionsAndRequestPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309091004274_AddDeliveries.resx">
+      <DependentUpon>202309091004274_AddDeliveries.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

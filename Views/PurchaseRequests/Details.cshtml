@@ -1,0 +1,79 @@
+﻿@model StyleHub.Models.PurchaseRequest
+
+@{
+    ViewBag.Title = "Деталі покупки";
+    var product = ViewBag.Cloth as StyleHub.Models.Cloth;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+
+    <div class="col">
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Товар
+            </dt>
+
+            <dd>
+                @product.Name
+            </dd>
+
+            <dt>
+                Служба доставки
+            </dt>
+
+            <dd>
+                @ViewBag.Delivery
+            </dd>
+
+            <dt>
+                Ім'я
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                Номер телефону
+            </dt>
+
+            <dd>
+                +@Html.DisplayFor(model => model.PhoneNumber)
+            </dd>
+
+            <dt>
+                Пошта
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+        </dl>
+    </div>
+
+    <div class="card col">
+        <img src="@product.ImageURL" class="card-img-top" style="max-height: 400px; object-fit:contain" alt="@product.Name">
+        <div class="card-body" style="max-height: 200px; overflow: auto;">
+            <h5 class="card-title">@product.Name</h5>
+            <p class="card-text">Ціна: @product.Price</p>
+            <p class="card-text">Залишилось на складі: @product.Amount</p>
+        </div>
+    </div>
+</div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PurchaseId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        var paymentLink = "@ViewBag.PaymentLink";
+        if (paymentLink) {
+            window.open(paymentLink, '_blank');
+        }
+    });
+    </script>

@@ -14,8 +14,12 @@
             <h4>Залишилось на складі: @Model.Amount</h4>
             <h3 >Ціна: @Model.Price</h3>
             <div class="container justify-content-between mt-4">
-            <a href="https://prt.mn/jFS4i6Tav" class="btn btn-primary btn-lg">Купити</a>
-            <a href="@ViewBag.ReturnUrl" class="btn btn-secondary btn-lg">Повернутись назад</a>
+                @using (Html.BeginForm("Create", "PurchaseRequests", new { ClothId = @Model.ClothId }, FormMethod.Get, new { @class = "form-inline" }))
+                {
+                    @Html.Hidden("ClothId", @Model.ClothId)
+                    <button type="submit" class="btn btn-primary btn-lg mb-4">Купити</button>
+                }
+                <a href="@ViewBag.ReturnUrl" class="btn btn-secondary btn-lg mb-3">Повернутись назад</a>
             </div>
         </div>
     </div>
