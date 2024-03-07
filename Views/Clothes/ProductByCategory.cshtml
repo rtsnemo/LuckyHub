@@ -17,8 +17,16 @@
                         </a>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">@product.Name</h5>
-                        <p class="card-text">Ціна: @product.Price</p>
+                        <h5 class="card-title text-nowrap" style="overflow: hidden; text-overflow: ellipsis;">@product.Name</h5>
+                        @if (product.SpecialOffer > 0 && product.SpecialOffer < product.Price)
+                        {
+                            <span class="card-text fw-bold text-decoration-line-through">Ціна: @product.Price.ToString("C0", new System.Globalization.CultureInfo("uk-UA"))</span> <span style="color:red">@($" -{((product.Price - product.SpecialOffer) / product.Price * 100):F0}%")</span>
+                            <h5 class="card-text fw-bold">Ціна: @product.SpecialOffer.ToString("C0", new System.Globalization.CultureInfo("uk-UA"))</h5>
+                        }
+                        else
+                        {
+                            <h5 class="card-text">Ціна: @product.Price.ToString("C0", new System.Globalization.CultureInfo("uk-UA"))</h5>
+                        }
                         <p class="card-text">Залишилось на складі: @product.Amount</p>
                         @using (Html.BeginForm("Create", "PurchaseRequests", new { ClothId = product.ClothId }, FormMethod.Get, new { @class = "form-inline" }))
                         {

@@ -1,4 +1,6 @@
-﻿namespace StyleHub.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace StyleHub.Models
 {
     public class Cloth
     {
@@ -14,5 +16,7 @@
         public int Amount { get; set; }
 
         public string ImageURL { get; set; }
+
+        public decimal SpecialOffer { get; set; }
     }
 }

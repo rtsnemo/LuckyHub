@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<StyleHub.Models.Cloth>
 
 @{
-    ViewBag.Title = "Головна товарів";
+    ViewBag.Title = "Спеціальні пропозиції цього тижня";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -19,15 +19,8 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title text-nowrap" style="overflow: hidden; text-overflow: ellipsis;">@product.Name</h5>
-                        @if (product.SpecialOffer > 0 && product.SpecialOffer < product.Price)
-                        {
-                            <span class="card-text fw-bold text-decoration-line-through">Ціна: @product.Price.ToString("C0", new System.Globalization.CultureInfo("uk-UA"))</span> <span style="color:red">@($" -{((product.Price - product.SpecialOffer) / product.Price * 100):F0}%")</span>
-                            <h5 class="card-text fw-bold">Ціна: @product.SpecialOffer.ToString("C0", new System.Globalization.CultureInfo("uk-UA"))</h5>
-                        }
-                        else
-                        {
-                            <h5 class="card-text">Ціна: @product.Price.ToString("C0", new System.Globalization.CultureInfo("uk-UA"))</h5>
-                        }
+                        <span class="card-text fw-bold text-decoration-line-through">Ціна: @product.Price.ToString("C0", new System.Globalization.CultureInfo("uk-UA"))</span> <span style="color:red">@($" -{((product.Price - product.SpecialOffer) / product.Price * 100):F0}%")</span>
+                        <h5 class="card-text fw-bold">Ціна: @product.SpecialOffer.ToString("C0", new System.Globalization.CultureInfo("uk-UA"))</h5>
                         <p class="card-text">Залишилось на складі: @product.Amount</p>
                         @using (Html.BeginForm("Create", "PurchaseRequests", new { ClothId = product.ClothId }, FormMethod.Get, new { @class = "form-inline" }))
                         {
@@ -39,10 +32,4 @@
             </div>
         }
     </div>
-
-    <p>
-        @Html.ActionLink("Додання товарів", "CreateList")
-    </p>
-
-    <p>@Html.ActionLink("Перейти до Категорій", "Index", "Categories", new { area = "" }, new { @class = "nav-link" })</p>
 </div>

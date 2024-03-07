@@ -27,6 +27,11 @@ namespace StyleHub.Controllers
             return View(db.Clothes.Where(q=> q.CategoryId == categoryId).ToList());
         }
 
+        public ActionResult SpecialOffers()
+        {
+            return View(db.Clothes.Where(q=> q.SpecialOffer < q.Price && q.SpecialOffer > 0).ToList());
+        }
+
         // GET: Clothes/Details/5
         public ActionResult Details(int? id)
         {
@@ -94,7 +99,7 @@ namespace StyleHub.Controllers
         // сведения см. в разделе https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClothId,Name,Description,CategoryId,Price,Amount,ImageURL")] Cloth cloth)
+        public ActionResult Edit([Bind(Include = "ClothId,Name,Description,CategoryId,Price,Amount,ImageURL,SpecialOffer")] Cloth cloth)
         {
             if (ModelState.IsValid)
             {

@@ -12,7 +12,15 @@
             <h2 class="text-center">@Model.Name</h2>
             <img src="@Model.ImageURL" alt="@Model.Name" class="img-fluid" style="object-fit:cover; max-height: 600px;" />
             <h4>Залишилось на складі: @Model.Amount</h4>
-            <h3 >Ціна: @Model.Price</h3>
+            <h3 >Ціна: @if (Model.SpecialOffer > 0 && Model.SpecialOffer < Model.Price)
+            {
+                @Model.SpecialOffer
+            }
+            else
+            {
+                @Model.Price
+            }
+            </h3>
             <div class="container justify-content-between mt-4 w-100 mx-auto">
                 @using (Html.BeginForm("Create", "PurchaseRequests", new { ClothId = @Model.ClothId }, FormMethod.Get, new { @class = "form-inline" }))
                 {

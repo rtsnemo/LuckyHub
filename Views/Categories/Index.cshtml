@@ -4,10 +4,6 @@
     ViewBag.Title = "Index";
 }
 
-<p class="mb-5">
-    @Html.ActionLink("Створення нової категорії", "CreateList")
-</p>
-
 <div class="container">
     <div class="row">
         @foreach (var item in Model)
@@ -25,3 +21,7 @@
         }
     </div>
 </div>
+
+<p class="mb-5">
+    @Html.ActionLink("Створення нової категорії", "CreateList")
+</p>

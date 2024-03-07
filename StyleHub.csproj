@@ -155,6 +155,10 @@
     <Compile Include="Migrations\202309091004274_AddDeliveries.designer.cs">
       <DependentUpon>202309091004274_AddDeliveries.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309101258258_AddSpecialOfferToCloth.cs" />
+    <Compile Include="Migrations\202309101258258_AddSpecialOfferToCloth.designer.cs">
+      <DependentUpon>202309101258258_AddSpecialOfferToCloth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Cloth.cs" />
@@ -234,6 +238,7 @@
     <Content Include="Views\PurchaseRequests\Details.cshtml" />
     <Content Include="Views\PurchaseRequests\Edit.cshtml" />
     <Content Include="Views\PurchaseRequests\Index.cshtml" />
+    <Content Include="Views\Clothes\SpecialOffers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -280,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309091004274_AddDeliveries.resx">
       <DependentUpon>202309091004274_AddDeliveries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309101258258_AddSpecialOfferToCloth.resx">
+      <DependentUpon>202309101258258_AddSpecialOfferToCloth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
